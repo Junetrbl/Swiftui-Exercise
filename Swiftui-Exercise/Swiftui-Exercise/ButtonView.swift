@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ButtonView: View {
     @State private var didSelect = false
-    @State private var daycount = 10.0
+    @State private var daycount = 0.0
 
     var body: some View {
         ZStack{
@@ -19,14 +19,14 @@ struct ButtonView: View {
                     .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
                     .edgesIgnoringSafeArea(.all)
                     .padding(.trailing, 50)
-                    .transition(.opacity)
+                    .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.2)))
             } else {
                 Image("night")
                     .resizable()
                     .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
                     .edgesIgnoringSafeArea(.all)
                     .padding(.trailing, 50)
-                    .transition(.opacity)
+                    .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.2)))
             }
 
             VStack{
@@ -50,13 +50,13 @@ struct ButtonView: View {
                     .font(.largeTitle)
             }
             VStack{
-                let isTree = daycount > 10
-                let isWeasle = daycount > 20
-                let isMushroom = daycount > 30
-                let isBear = daycount > 40
-                let isGrass = daycount > 50
-                let isDeer = daycount > 60
-                
+                let isTree = daycount > 1
+                let isWeasle = daycount > 2
+                let isMushroom = daycount > 3
+                let isBear = daycount > 4
+                let isGrass = daycount > 5
+                let isDeer = daycount > 6
+
                 HStack (alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 80){
                     Image(systemName: isTree ? "leaf": "")
                     Image(systemName: isWeasle ? "hare": "")
