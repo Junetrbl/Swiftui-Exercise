@@ -18,6 +18,8 @@
 		D358B17D26E7D865001C7AED /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D358B17C26E7D865001C7AED /* SwiftUIView.swift */; };
 		D358B18226E7DD7C001C7AED /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D358B18126E7DD7C001C7AED /* ShapeView.swift */; };
 		D358B18726E7DF70001C7AED /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D358B18626E7DF70001C7AED /* ButtonView.swift */; };
+		D35CA72326FA74DB001C18E4 /* TutorialView_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35CA72226FA74DB001C18E4 /* TutorialView_1.swift */; };
+		D35CA72826FA78E8001C18E4 /* TutorialView_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35CA72726FA78E8001C18E4 /* TutorialView_2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		D358B17C26E7D865001C7AED /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		D358B18126E7DD7C001C7AED /* ShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
 		D358B18626E7DF70001C7AED /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		D35CA72226FA74DB001C18E4 /* TutorialView_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView_1.swift; sourceTree = "<group>"; };
+		D35CA72726FA78E8001C18E4 /* TutorialView_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView_2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 				D358B15426E7D3B4001C7AED /* LaunchScreen.storyboard */,
 				D358B15726E7D3B4001C7AED /* Info.plist */,
 				D358B15126E7D3B4001C7AED /* Preview Content */,
+				D35CA72226FA74DB001C18E4 /* TutorialView_1.swift */,
+				D35CA72726FA78E8001C18E4 /* TutorialView_2.swift */,
 			);
 			path = "Swiftui-Exercise";
 			sourceTree = "<group>";
@@ -277,10 +283,12 @@
 			files = (
 				D358B18226E7DD7C001C7AED /* ShapeView.swift in Sources */,
 				D358B14A26E7D3B1001C7AED /* AppDelegate.swift in Sources */,
+				D35CA72326FA74DB001C18E4 /* TutorialView_1.swift in Sources */,
 				D358B18726E7DF70001C7AED /* ButtonView.swift in Sources */,
 				D358B14C26E7D3B1001C7AED /* SceneDelegate.swift in Sources */,
 				D358B17D26E7D865001C7AED /* SwiftUIView.swift in Sources */,
 				D358B14E26E7D3B1001C7AED /* ContentView.swift in Sources */,
+				D35CA72826FA78E8001C18E4 /* TutorialView_2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

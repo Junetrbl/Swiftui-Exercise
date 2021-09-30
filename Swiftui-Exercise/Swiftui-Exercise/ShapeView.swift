@@ -4,12 +4,17 @@
 //
 //  Created by 박윤수 on 2021/09/08.
 //
-
 import SwiftUI
 
 struct ShapeView: View {
+    @State private var tapCount = UserDefaults.standard.integer(forKey: "Tap")
     var body: some View {
         VStack{
+            Button("Tap count: \(tapCount)") {
+                self.tapCount += 1
+                UserDefaults.standard.set(self.tapCount, forKey: "Tap")
+            }
+            
             Rectangle()
                 .stroke(Color.orange, style: StrokeStyle(
                             lineWidth:10
