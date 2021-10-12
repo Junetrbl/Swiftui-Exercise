@@ -162,10 +162,10 @@ struct TimeCycleView: View {
                         label: {
                             Text("Confirm")
                         })
-//                        .simultaneousGesture(TapGesture().onEnded{
-//                            UserDefaults.standard.set(wakeupTimeValue, forKey: "wakeupTime")
-//                            UserDefaults.standard.set(sleepTimeValue, forKey: "sleepTime")
-//                        })
+                        .simultaneousGesture(TapGesture().onEnded{
+                            UserDefaults.standard.set(wakeupTimeValue, forKey: "wakeupTime")
+                            UserDefaults.standard.set(sleepTimeValue, forKey: "sleepTime")
+                        })
                 }
                 .navigationBarBackButtonHidden(true)
                 .navigationBarHidden(true)
