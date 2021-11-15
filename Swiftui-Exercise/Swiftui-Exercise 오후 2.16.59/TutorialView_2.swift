@@ -99,6 +99,10 @@ struct TimeCycleView: View {
                     .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.2)))
                 
                 VStack{
+                    Text("When is your sleep time?")
+                                    .font(.system(size: 30))
+                                    .foregroundColor(.white)
+                                    .bold()
                     ZStack{
                         Circle()
                             .fill(Color.white)
@@ -113,18 +117,18 @@ struct TimeCycleView: View {
                         
                         Circle()
                             .trim(from: 0.0, to: wakeupTimeValue/wakeup_config.totalValue)
-                            .stroke(Color.blue, lineWidth: 4)
+                            .stroke(Color.white, lineWidth: 4)
                             .frame(width: wakeup_config.radius * 2, height: wakeup_config.radius * 2)
                             .rotationEffect(.degrees(-90))
                         
                         Circle()
                             .trim(from: sleepTimeValue/sleep_config.totalValue, to: 24.0)
-                            .stroke(Color.blue, lineWidth: 4)
+                            .stroke(Color.white, lineWidth: 4)
                             .frame(width: wakeup_config.radius * 2, height: wakeup_config.radius * 2)
                             .rotationEffect(.degrees(-90))
                         
                         Circle()
-                            .fill(Color.purple)
+                            .fill(Color.white)
                             .frame(width: sleep_config.knobRadius * 2, height: sleep_config.knobRadius * 2)
                             .padding(10)
                             .offset(y: -sleep_config.radius)
@@ -135,7 +139,7 @@ struct TimeCycleView: View {
                                         }))
                             
                         Circle()
-                            .fill(Color.blue)
+                            .fill(Color.white)
                             .frame(width: wakeup_config.knobRadius * 2, height: wakeup_config.knobRadius * 2)
                             .padding(10)
                             .offset(y: -wakeup_config.radius)
@@ -146,21 +150,26 @@ struct TimeCycleView: View {
                                         }))
                         
                         VStack{
-                            Text("\(String.init(format: "%.0f", wakeupTimeValue)):00~")
+                            Text("\(String.init(format: "%.0f", sleepTimeValue)):00~")
                                             .font(.system(size: 60))
                                             .foregroundColor(.white)
                             
-                            Text("\(String.init(format: "%.0f", sleepTimeValue)):00")
+                            Text("\(String.init(format: "%.0f", wakeupTimeValue)):00")
                                             .font(.system(size: 60))
                                             .foregroundColor(.white)
                         }
                     }
+                    .padding(.top, 50)
                     NavigationLink(
                         destination: ButtonView(wakeupTime: $wakeupTimeValue, sleepTime: $sleepTimeValue)
                             .navigationBarBackButtonHidden(true)
                             .navigationBarHidden(true),
                         label: {
                             Text("Confirm")
+                                .bold()
+                                .font(.largeTitle)
+                                .foregroundColor(.white)
+                                .padding(.top, 100)
                         })
                         .simultaneousGesture(TapGesture().onEnded{
                             UserDefaults.standard.set(wakeupTimeValue, forKey: "wakeupTime")
@@ -220,6 +229,11 @@ struct Config {
 
 struct TutorialView_2_Previews: PreviewProvider {
     static var previews: some View {
-        TutorialView_2()
+        Group {
+            TutorialView_2()
+                .previewDevice("iPhone 8")
+            TutorialView_2()
+                .previewDevice("iPhone 8")
+        }
     }
 }

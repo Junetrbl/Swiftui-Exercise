@@ -32,31 +32,31 @@ struct ButtonView: View {
             }
 
             VStack{
-                Text("\(String.init(format: "%.0f", wakeupTime)):00")
-                    .foregroundColor(.white)
-                Text("\(String.init(format: "%.0f", sleepTime)):00")
-                    .foregroundColor(.white)
+//                Text("\(String.init(format: "%.0f", wakeupTime)):00")
+//                    .foregroundColor(.white)
+//                Text("\(String.init(format: "%.0f", sleepTime)):00")
+//                    .foregroundColor(.white)
                 Button(action: {
                     showingAlert = true
                 }, label: {
                     Image(didSelect ? "sun" : "moon")
                         .resizable()
                         .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                        .frame(width: 80, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .frame(width: 200, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .foregroundColor(Color.blue)
                 })
                 .padding(.bottom, 500)
                 .padding(.trailing, 240)
                 .alert(isPresented: $showingAlert) {
                     didSelect ?
-                    Alert(title: Text("Do you want to wake up now?"),
+                    Alert(title: Text("Do you want to sleep now?"),
                                   primaryButton: .default(Text("Yes")) {
                                     action: do {
                                         didSelect.toggle()
                                         wakeupExactTime() ? (daycount += 0.5) : (daycount = 0)
                                     }},
                         secondaryButton: .cancel()) :
-                    Alert(title: Text("Do you want to sleep now?"),
+                    Alert(title: Text("Do you want to wake up now?"),
                           primaryButton: .default(Text("Yes")) {
                             action: do {
                                 didSelect.toggle()
@@ -82,12 +82,12 @@ struct ButtonView: View {
                     .frame(width: 150, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .padding(.bottom, 150)
             }
-            
-            Text("Current Day Count : \(daycount.description)")
-                .bold()
-                .foregroundColor(.white)
-                .font(.title)
-                .padding(.top, 400)
+//
+//            Text("Current Day Count : \(daycount.description)")
+//                .bold()
+//                .foregroundColor(.white)
+//                .font(.title)
+//                .padding(.top, 400)
             
             let isTree = daycount > 1
             let isWeasle = daycount > 2
